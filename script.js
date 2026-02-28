@@ -1,29 +1,19 @@
+function showName() {
+    const fileInput = document.getElementById('fileInput');
+    const fileNameDisplay = document.getElementById('fileName');
+    if(fileInput.files[0]) {
+        fileNameDisplay.innerHTML = `✅ <strong>${fileInput.files[0].name}</strong>`;
+    }
+}
+
 function showError(msg) {
     const errorContainer = document.getElementById('errorContainer');
     if (errorContainer) {
         errorContainer.innerHTML = `<div class="error-msg">⚠️ ${msg}</div>`;
         setTimeout(() => { errorContainer.innerHTML = ""; }, 3500);
     } else {
-        alert(msg); // Error box එක නැත්නම් alert එකක් හරි පෙන්වන්න
+        alert(msg);
     }
-}
-function showName() {
-    const file = document.getElementById('fileInput').files[0];
-    const fileNameDisplay = document.getElementById('fileName');
-    if(file) {
-        fileNameDisplay.innerHTML = `✅ <strong>${file.name}</strong>`;
-    }
-}
-
-// ⚠️ Error එක පෙන්වන function එක
-function showError(msg) {
-    const errorContainer = document.getElementById('errorContainer');
-    errorContainer.innerHTML = `<div class="error-msg">⚠️ ${msg}</div>`;
-    
-    // තත්පර 3 කින් error එක අයින් කරනවා
-    setTimeout(() => {
-        errorContainer.innerHTML = "";
-    }, 3500);
 }
 
 function startAnalysis() {
@@ -38,22 +28,22 @@ function startAnalysis() {
         return;
     }
 
-    // 1. කිසිම file එකක් තෝරා නැතිනම්
+    // 1. Check if file exists
     if(!fileInput.files[0]) {
         showError("Please upload an image first!");
         return;
     }
 
-    // 2. Image එකක් නොවන file එකක් නම් (Validation)
+    // 2. Check if it's an image
     const fileType = fileInput.files[0].type;
     if(!fileType.startsWith('image/')) {
         showError("Invalid file! Please upload a JPG or PNG image.");
-        fileInput.value = ""; // Reset input
+        fileInput.value = "";
         document.getElementById('fileName').innerText = "📸 Click to Upload Label";
         return;
     }
 
-    // Analysis start UI
+    // Start UI Animation
     results.style.display = "none";
     loader.style.display = "block";
     btn.disabled = true;
@@ -66,7 +56,7 @@ function startAnalysis() {
         card.classList.remove('analyzing');
         results.style.display = "block";
 
-        // --- DYNAMIC RESULTS LOGIC ---
+        // Logic for Dynamic Results
         const sugar = Math.floor(Math.random() * 38); 
         const salt = (Math.random() * 1.8).toFixed(1); 
         
@@ -74,19 +64,19 @@ function startAnalysis() {
 
         if (sugar > 20) {
             grade = "D (3.5/10)"; color = "#e74c3c"; score = "35%";
-            insight = "⚠️ <b>Warning:</b> This product is extremely high in sugar. Frequent intake can lead to energy crashes and insulin spikes.";
-            tip = "Avoid other sugary snacks today and try to drink at least 2L of water to stay hydrated.";
+            insight = "⚠️ <b>Warning:</b> High sugar detected. Frequent intake can lead to energy crashes and insulin spikes.";
+            tip = "Avoid other sugary snacks today and try to drink at least 2L of water.";
         } else if (sugar > 8) {
             grade = "B- (6.8/10)"; color = "#f1c40f"; score = "68%";
             insight = "🟡 <b>Moderate:</b> Sugar and sodium levels are average. Suitable for occasional consumption.";
-            tip = "Balance this with fiber-rich food like vegetables to stabilize your blood sugar levels.";
+            tip = "Balance this with fiber-rich food like vegetables to stabilize your blood sugar.";
         } else {
             grade = "A (9.5/10)"; color = "#2ecc71"; score = "95%";
-            insight = "✅ <b>Excellent:</b> This product is low in sugar and salt. It is safe for your daily diet.";
-            tip = "This is a great choice! Continue selecting products with similar nutritional profiles.";
+            insight = "✅ <b>Excellent:</b> Low sugar and salt profile. Safe for your daily diet.";
+            tip = "Great choice! Keep selecting products with similar nutritional profiles.";
         }
 
-        // Update UI Elements
+        // Update UI
         const gradeDisplay = document.getElementById('gradeText');
         gradeDisplay.innerText = grade;
         gradeDisplay.style.color = color;
@@ -104,6 +94,5 @@ function startAnalysis() {
         document.getElementById('tipText').innerText = tip;
         document.getElementById('healthTips').style.display = "block";
 
-    }, 2800); // 2.8s Delay for realistic feel
+    }, 2800);
 }
-
