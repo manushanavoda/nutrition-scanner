@@ -1,4 +1,4 @@
-# 🥗 AI Nutrition Scanner Pro
+# AI Nutrition Scanner Pro
 
 An interactive web-based **AI Nutrition Label Scanner** built with Vanilla JavaScript. This tool simulates an AI-powered OCR scan to help users understand food labels instantly by providing health grades, dynamic insights, and personalized tips.
 
