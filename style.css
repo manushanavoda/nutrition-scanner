@@ -1,0 +1,119 @@
+:root {
+    --primary: #2ecc71;
+    --danger: #e74c3c;
+    --warning: #f1c40f;
+    --dark: #2c3e50;
+    --bg: #f8fafc;
+    --indigo: #4f46e5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card-container {
+    background: white;
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 90%;
+    transition: all 0.5s ease;
+}
+
+.analyzing {
+    animation: pulse 1.5s infinite ease-in-out;
+    border: 2px solid var(--primary);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5px; }
+.subtitle { color: #64748b; text-align: center; font-size: 14px; margin-bottom: 30px; }
+
+.upload-box {
+    border: 2px dashed #cbd5e0;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 25px;
+    background: #fafafa;
+    transition: 0.3s;
+}
+
+.upload-box:hover { border-color: var(--primary); background: #f0fff4; }
+
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.results-area { display: none; margin-top: 30px; border-top: 1px solid #f1f5f9; padding-top: 25px; }
+
+.score-section { background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 20px; text-align: center; }
+.grade-display { font-size: 28px; font-weight: 800; color: var(--dark); margin: 5px 0; }
+
+.progress-bar { background: #e2e8f0; height: 12px; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+.progress-fill { background: linear-gradient(90deg, var(--danger), var(--warning), var(--primary)); height: 100%; width: 0%; transition: width 1.5s ease; }
+
+.nutrition-item { display: flex; justify-content: space-between; padding: 14px; border-radius: 12px; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
+.high { background: #fff5f5; color: var(--danger); border: 1px solid #fed7d7; }
+.low { background: #f0fff4; color: var(--primary); border: 1px solid #c6f6d5; }
+
+.ai-insight {
+    background: #eef2ff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 20px;
+    border-left: 5px solid var(--indigo);
+    font-size: 13px;
+    color: #312e81;
+    line-height: 1.6;
+}
+
+.health-tips {
+    background: #fff9db;
+    border: 1px solid #fab005;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #862e00;
+    text-align: left;
+}
+.health-tips h4 { margin: 0 0 5px 0; font-size: 14px; color: #5c2d00; }
+
+.loader-container { text-align: center; margin-top: 20px; color: #64748b; }
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.disclaimer { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 25px; }

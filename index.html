@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nutrition Scanner Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="card-container" id="mainCard">
+    <h2>🥗 Nutrition AI Scanner</h2>
+    <p class="subtitle">Scan food labels to make healthier choices instantly.</p>
+
+    <div class="upload-box" id="dropZone" onclick="document.getElementById('fileInput').click()">
+        <span id="fileName">📸 Click to Upload Label</span>
+        <input type="file" id="fileInput" hidden onchange="showName()">
+    </div>
+
+    <button class="btn" id="scanBtn" onclick="startAnalysis()">Analyze Label</button>
+    
+    <div class="loader-container" id="loaderBox" style="display: none;">
+        <div class="loader"></div>
+        <p>AI is reading ingredients...</p>
+    </div>
+
+    <div id="results" class="results-area">
+        <div class="score-section">
+            <span class="label-text">Overall Health Grade</span>
+            <div id="gradeText" class="grade-display">B- (6.5/10)</div>
+            <div class="progress-bar">
+                <div id="fill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="nutrition-grid">
+            <div class="nutrition-item high" id="sugarCard">
+                <span>Sugar Content</span>
+                <span id="sugarVal">HIGH (24g)</span>
+            </div>
+            <div class="nutrition-item low" id="saltCard">
+                <span>Sodium (Salt)</span>
+                <span id="saltVal">LOW (0.1g)</span>
+            </div>
+        </div>
+
+        <div id="aiInsightBox"></div>
+
+        <div id="healthTips" class="health-tips" style="display: none;">
+            <h4>💡 Pro Health Tip</h4>
+            <p id="tipText"></p>
+        </div>
+
+        <p class="disclaimer">⚠️ Simulated AI analysis for demonstration purposes.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
