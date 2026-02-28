@@ -24,7 +24,7 @@ body {
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
     max-width: 450px;
     width: 90%;
-    transition: all 0.5s ease;
+    transition: 0.5s ease;
 }
 
 .analyzing {
@@ -49,10 +49,7 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
     cursor: pointer;
     margin-bottom: 25px;
     background: #fafafa;
-    transition: 0.3s;
 }
-
-.upload-box:hover { border-color: var(--primary); background: #f0fff4; }
 
 .btn {
     background: var(--primary);
@@ -64,22 +61,20 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
     font-weight: 600;
     cursor: pointer;
     width: 100%;
-    transition: 0.3s;
 }
-
-.btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
 .results-area { display: none; margin-top: 30px; border-top: 1px solid #f1f5f9; padding-top: 25px; }
 
 .score-section { background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 20px; text-align: center; }
-.grade-display { font-size: 28px; font-weight: 800; color: var(--dark); margin: 5px 0; }
+.grade-display { font-size: 32px; font-weight: 800; margin: 5px 0; }
 
 .progress-bar { background: #e2e8f0; height: 12px; border-radius: 10px; overflow: hidden; margin-top: 10px; }
 .progress-fill { background: linear-gradient(90deg, var(--danger), var(--warning), var(--primary)); height: 100%; width: 0%; transition: width 1.5s ease; }
 
-.nutrition-item { display: flex; justify-content: space-between; padding: 14px; border-radius: 12px; margin-bottom: 10px; font-weight: 600; font-size: 14px; }
-.high { background: #fff5f5; color: var(--danger); border: 1px solid #fed7d7; }
-.low { background: #f0fff4; color: var(--primary); border: 1px solid #c6f6d5; }
+.nutrition-item { display: flex; justify-content: space-between; padding: 14px; border-radius: 12px; margin-bottom: 10px; font-weight: 600; font-size: 14px; border: 1px solid #eee; }
+.high { background: #fff5f5; color: var(--danger); border-color: #fed7d7; }
+.low { background: #f0fff4; color: var(--primary); border-color: #c6f6d5; }
+.med { background: #fffdf0; color: #b7791f; border-color: #fef3c7; }
 
 .ai-insight {
     background: #eef2ff;
@@ -90,6 +85,7 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
     font-size: 13px;
     color: #312e81;
     line-height: 1.6;
+    text-align: left;
 }
 
 .health-tips {
@@ -102,9 +98,8 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
     color: #862e00;
     text-align: left;
 }
-.health-tips h4 { margin: 0 0 5px 0; font-size: 14px; color: #5c2d00; }
 
-.loader-container { text-align: center; margin-top: 20px; color: #64748b; }
+.loader-container { text-align: center; margin: 20px 0; color: #64748b; font-size: 14px; }
 .loader {
     border: 4px solid #f3f3f3;
     border-top: 4px solid var(--primary);
