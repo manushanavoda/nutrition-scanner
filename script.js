@@ -1,3 +1,12 @@
+function showError(msg) {
+    const errorContainer = document.getElementById('errorContainer');
+    if (errorContainer) {
+        errorContainer.innerHTML = `<div class="error-msg">⚠️ ${msg}</div>`;
+        setTimeout(() => { errorContainer.innerHTML = ""; }, 3500);
+    } else {
+        alert(msg); // Error box එක නැත්නම් alert එකක් හරි පෙන්වන්න
+    }
+}
 function showName() {
     const file = document.getElementById('fileInput').files[0];
     const fileNameDisplay = document.getElementById('fileName');
@@ -97,3 +106,4 @@ function startAnalysis() {
 
     }, 2800); // 2.8s Delay for realistic feel
 }
+
