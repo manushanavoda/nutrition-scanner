@@ -28,7 +28,6 @@ body {
     text-align: center;
 }
 
-/* Pulse Animation */
 .analyzing {
     animation: pulse 1.5s infinite ease-in-out;
     border: 2px solid var(--primary);
@@ -43,7 +42,6 @@ body {
 h2 { color: var(--dark); font-weight: 800; margin-bottom: 5px; }
 .subtitle { color: #64748b; font-size: 14px; margin-bottom: 30px; }
 
-/* Error Message Style */
 .error-msg {
     background: #fff5f5;
     color: #c53030;
