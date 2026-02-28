@@ -25,8 +25,10 @@ body {
     max-width: 450px;
     width: 90%;
     transition: 0.5s ease;
+    text-align: center;
 }
 
+/* Pulse Animation */
 .analyzing {
     animation: pulse 1.5s infinite ease-in-out;
     border: 2px solid var(--primary);
@@ -38,14 +40,32 @@ body {
     100% { transform: scale(1); }
 }
 
-h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5px; }
-.subtitle { color: #64748b; text-align: center; font-size: 14px; margin-bottom: 30px; }
+h2 { color: var(--dark); font-weight: 800; margin-bottom: 5px; }
+.subtitle { color: #64748b; font-size: 14px; margin-bottom: 30px; }
+
+/* Error Message Style */
+.error-msg {
+    background: #fff5f5;
+    color: #c53030;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #feb2b2;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    animation: shake 0.4s linear;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
 
 .upload-box {
     border: 2px dashed #cbd5e0;
     padding: 30px;
     border-radius: 18px;
-    text-align: center;
     cursor: pointer;
     margin-bottom: 25px;
     background: #fafafa;
@@ -65,7 +85,7 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
 
 .results-area { display: none; margin-top: 30px; border-top: 1px solid #f1f5f9; padding-top: 25px; }
 
-.score-section { background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 20px; text-align: center; }
+.score-section { background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 20px; }
 .grade-display { font-size: 32px; font-weight: 800; margin: 5px 0; }
 
 .progress-bar { background: #e2e8f0; height: 12px; border-radius: 10px; overflow: hidden; margin-top: 10px; }
@@ -111,4 +131,4 @@ h2 { color: var(--dark); text-align: center; font-weight: 800; margin-bottom: 5p
 }
 
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.disclaimer { font-size: 11px; color: #94a3b8; text-align: center; margin-top: 25px; }
+.disclaimer { font-size: 11px; color: #94a3b8; margin-top: 25px; }
