@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Nutrition Scanner Pro</title>
+    <title>AI Nutrition Scanner Pro | Dynamic Analysis</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -22,26 +22,26 @@
     
     <div class="loader-container" id="loaderBox" style="display: none;">
         <div class="loader"></div>
-        <p>AI is reading ingredients...</p>
+        <p id="loaderText">AI is reading ingredients...</p>
     </div>
 
     <div id="results" class="results-area">
         <div class="score-section">
             <span class="label-text">Overall Health Grade</span>
-            <div id="gradeText" class="grade-display">B- (6.5/10)</div>
+            <div id="gradeText" class="grade-display">--</div>
             <div class="progress-bar">
                 <div id="fill" class="progress-fill"></div>
             </div>
         </div>
 
         <div class="nutrition-grid">
-            <div class="nutrition-item high" id="sugarCard">
+            <div class="nutrition-item" id="sugarCard">
                 <span>Sugar Content</span>
-                <span id="sugarVal">HIGH (24g)</span>
+                <span id="sugarVal">--</span>
             </div>
-            <div class="nutrition-item low" id="saltCard">
+            <div class="nutrition-item" id="saltCard">
                 <span>Sodium (Salt)</span>
-                <span id="saltVal">LOW (0.1g)</span>
+                <span id="saltVal">--</span>
             </div>
         </div>
 
